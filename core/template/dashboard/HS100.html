@@ -1,0 +1,104 @@
+<div class="eqLogic-widget eqLogic" style="width: 140px;height: 120px;border:#border#;border-radius:#border-radius#;background-color: #background-color#;color: #color#;#style#" data-eqLogic_id="#id#" data-eqLogic_uid="#uid#" data-version="dashboard">
+    <style  type="text/css">
+        .smartplugTable_#uid# {
+            display: table;
+            width: 100%;
+            height: 120px;
+        }
+    .smartplugRows_#uid# {
+        display: table-row;
+    }
+    .smartplug_state_#uid# {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+    }
+    .smartplug_Icon_#uid# {
+        width: 75px;
+        height: 75px;
+    }
+    .smartplug_Infos_#uid# {
+        display: table-cell;
+        vertical-align: top;
+        text-align: center;
+        width: 100%;
+    }
+    .smartplug_Data_#uid# {
+        font-size: 10px;
+        letter-spacing: 0.4px;
+    }
+
+    </style>
+    <span class="statusCmd" style="position: absolute;margin-left: 3px;width : 30px;z-index: 1030;"></span>
+    <i class='fa fa-refresh pull-right cursor cmd refresh tooltips' data-cmd_id="#refresh_id#" title="Rafraîchir" style="margin-top: 3px;margin-right: 3px;"></i>
+    <i class="icon jeedom2-lightbulb25 cursor led cmd tooltips " title="Led on off" id="led" style="position : absolute;bottom: 3px;left: 3px;z-index: 500;"></i>
+    <center><a href="#eqLink#" style="font-size : 1.2em;#hideEqLogicName#">#name_display#<span style="font-size: 0.85em;position: relative;top:-2px;">#object_name#</span></a></center>
+    
+    <span class="cmd cmd-widget noRefresh" data-cmd_id="#on_id#" style="display:none;"></span>
+    <span class="cmd cmd-widget noRefresh" data-cmd_id="#off_id#" style="display:none;"></span>
+    <span class="cmd cmd-widget noRefresh" data-cmd_id="#nightmodeon_id#" style="display:none;"></span>
+    <span class="cmd cmd-widget noRefresh" data-cmd_id="#nightmodeoff_id#" style="display:none;"></span>
+    
+   
+    <div class="tooltips smartplugTable_#uid#">
+        
+        <div class="smartplugRows_#uid# etat">
+            <div class="smartplug_state_#uid#"><i class="icon jeedom-prise etat cursor tooltips" title="etat" style="font-size: 4em;margin-left: 5px;color:grey"></i></div>
+        </div>
+        <div class="smartplugRows_#uid# currentRunTime">
+            <div class="smartplug_Infos_#uid#">
+                <div class="smartplug_Data_#uid#">duree d'allumage</div>
+                <div class="smartplug_Data_#uid# currentRunTime #uid#" id="uptime#id#"  title="CurrentRunTime (#currentRunTime_collectDate#)">
+                    
+                    <script>
+                        var seconds = #currentRunTime#;
+                        var numdays = Math.floor((seconds % 31536000) / 86400);
+                        var numhours = Math.floor(((seconds % 31536000) % 86400) / 3600);
+                        var numminutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
+                        var numseconds = (((seconds % 31536000) % 86400) % 3600) % 60;
+                        var uptime = "";
+                        if (seconds > 0) {
+                            if (numdays > 0) 		{ uptime += numdays + "j "; 	}
+                            if (numhours > 0) 		{ uptime +=  numhours + "h "; 	}
+                            if (numminutes > 0) 	{ uptime += numminutes + "m "; }
+                            if (numseconds > 0) 	{  uptime += numseconds + "s"; 	}
+                        } else {
+                            uptime += "0 s";
+                        }
+                        $('#uptime#id#').text(uptime);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+$('.eqLogic[data-eqLogic_uid=#uid#] .refresh').on('click', function () {
+   jeedom.cmd.execute({id: '#refresh_id#'});
+   log("toto");
+});
+if ('#etat#' == '1') {
+    $('.eqLogic[data-eqLogic_uid=#uid#] .etat').css('color', 'white');
+}
+    if ('#nightmode#' == '0') {
+        $('.eqLogic[data-eqLogic_uid=#uid#] .led').css('color', 'grey');
+    }
+
+$('.eqLogic[data-eqLogic_uid=#uid#] .etat').on('click', function() {
+                                                    if('#etat#' == '1'){
+                                                    jeedom.cmd.execute({id: '#off_id#'});
+                                                    }else{
+                                                    jeedom.cmd.execute({id: '#on_id#'});
+                                                    }
+                                                    });
+$('.eqLogic[data-eqLogic_uid=#uid#] .led').on('click', function() {
+       if('#nightmode#' == '1'){
+       jeedom.cmd.execute({id: '#nightmodeoff_id#'});
+       }else{
+       jeedom.cmd.execute({id: '#nightmodeon_id#'});
+       }
+});
+
+        </script>
+</div>

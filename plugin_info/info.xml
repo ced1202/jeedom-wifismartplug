@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+    <id>wifismartplug</id>
+    <name>Wifi Smartplug</name>
+    <description>Plugin permettant de gerer les prise wifi TP-LINK HS100 et HS110</description>
+    <icon>fa fa-keyboard-o</icon>
+    <licence>AGPL</licence>
+    <author>bobeponge14</author>
+    <installation>Aucune</installation>
+    <require>2.4.6</require>
+    <category>energy</category>
+</info>
+

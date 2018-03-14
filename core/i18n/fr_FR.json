@@ -1,0 +1,71 @@
+{
+    "plugins\/tplinksmartplug\/plugin_info\/info.xml": {
+        "Plugin permettant de gerer les prise wifi TP-LINK HS100 et HS110": "Plugin permettant de gerer les prise wifi TP-LINK HS100 et HS110",
+        "Aucune": "Aucune"
+    },
+    "plugins\/tplinksmartplug\/desktop\/php\/wifiksmartplug.php": {
+        "Gestion": "Gestion",
+        "Ajouter": "Ajouter",
+        "Santé": "Santé",
+        "Mes SmartPlugs": "Mes SmartPlugs",
+        "Nom de l'équipement": "Nom de l'équipement",
+        "Objet parent": "Objet parent",
+        "Aucun": "Aucun",
+        "Catégorie": "Catégorie",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Configuration": "Configuration",
+        "Sauvegarder": "Sauvegarder",
+        "Supprimer": "Supprimer",
+        "Equipement": "Equipement",
+        "Commandes": "Commandes",
+        "Nom de l'équipement": "Nom de l'équipement",
+        "Objet parent": "Objet parent",
+        "Catégorie": "Catégorie",
+        "Général": "Général",
+        "Configuration": "Configuration",
+        "Modèle": "Modèle",
+        "Adresse IP": "Adresse IP",
+        "Aucun": "Aucun",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Tableau de commandes": "Tableau de commandes",
+        "prise HS100": "prise HS100",
+        "prise HS100": "prise HS110",
+        "Nom": "Nom",
+        "Options": "Options",
+        "Action": "Action",
+        "Santé": "Santé",
+        "Equipement": "Equipement",
+        "Commandes": "Commandes",
+        "Ajouter un dispositif": "Ajouter un dispositif",
+        "Configuration avancée": "Configuration avancée"
+    },
+    "plugins\/mpower\/desktop\/js\/wifismartplug.js": {
+        "Historiser": "Historiser",
+        "Tester": "Tester",
+        "Santé Mpower": "Santé Mpower",
+        "Afficher": "Afficher"
+    },
+    "plugins\/mpower\/core\/class\/wifismartplug.class.php": {
+        "currentRunTimeHour": "currentRunTimeHour",
+        "currentRunTime": "currentRunTime",
+        "Rafraichir": "Rafraichir",
+        "macAddress": "macAddress",
+        "alias": "alias",
+        "dailyConso": "dailyConso",
+        "currentPower": "currentPower",
+        "voltage": "voltage",
+        "Etat": "Etat",
+        "On": "On",
+        "Off": "Off",
+        "Nightmode": "Nightmode",
+        "NightModeOn": "NightModeOn",
+        "NightModeOff": "NightModeOff",
+        "Rafraichir": "Rafraichir"
+       
+    },
+    "plugins\/mpower\/plugin_info\/info.json": {
+        "Plugin pour controller les équipements smartplug wifi TpLink": "Plugin pour controller les équipements smartplug wifi TpLink"
+    }
+}
