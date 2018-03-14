@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3.dev">
-<title>Smartplug</title>
+<title>Mpower</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -415,14 +415,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table des matières</div>
 <ul class="sectlevel1">
-<li><a href="#_smartplug">1. Smartplug</a></li>
-<li><a href="#_preambule">2. Preambule</a>
+<li><a href="#_mpower">1. Mpower</a>
 <ul class="sectlevel2">
-<li><a href="#_description">2.1. Description</a></li>
-<li><a href="#_configuration">2.2. Configuration</a>
+<li><a href="#_description">1.1. Description</a></li>
+<li><a href="#_configuration">1.2. Configuration</a>
 <ul class="sectlevel3">
-<li><a href="#_configuration_du_plugin">2.2.1. Configuration du plugin:</a></li>
-<li><a href="#_le_widget">2.2.2. Le widget :</a></li>
+<li><a href="#_configuration_du_plugin">1.2.1. Configuration du plugin:</a></li>
+<li><a href="#_le_widget">1.2.2. Le widget :</a></li>
 </ul>
 </li>
 </ul>
@@ -432,50 +431,34 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_smartplug">1. Smartplug</h2>
+<h2 id="_mpower">1. Mpower</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_preambule">2. Preambule</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Pour rendre à Cesar ce qui est à Cesar, ce plugin est inspiré du plugin mPower de sarahka63, plugin dont je me suis servi comme modéle.</p>
-</div>
 <div class="sect2">
-<h3 id="_description">2.1. Description</h3>
+<h3 id="_description">1.1. Description</h3>
 <div class="paragraph">
-<p>Ce plugin permet de contrôler les prises tplink wifi HS100 et HS110. Le widget permet de voir toutes les infos :</p>
+<p>Ce plugin permet de contrôler vos multiprises Mpower. Le widget permet de voir toutes les infos :</p>
 </div>
 <div class="paragraph">
-<p>Pour les HS100
-- Etat
-- Durée depuis l&#8217;allumage
-- Mode nuit</p>
+<p>Etat
+Puissance
+Consommation
+Courant
+Voltage
+Et facteur de puissance</p>
 </div>
 <div class="paragraph">
-<p>Pour les HS110 ( prise remontant la puissance)
-- Etat
-- Puissance
-- Durée depuis l&#8217;allumage
-- Consommation du jours
-- Voltage
-- Mode nuit</p>
+<p>Les données sont rafraichies toutes les minutes et après une action depuis jeedom</p>
 </div>
 <div class="paragraph">
-<p>Les données sont rafraîchies toutes les minutes et après une action depuis jeedom</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../images/smartplug_screenshot1.png" alt="smartplug_screenshot1" width="256"></span>
-<span class="image"><img src="../images/smartplug_screenshot2.png" alt="smartplug_screenshot2" width="256"></span></p>
+<p><span class="image"><img src="../images/mpower_screenshot1.png" alt="mpower_screenshot1" width="256"></span>
+<span class="image"><img src="../images/mpower_screenshot3.png" alt="mpower_screenshot3" width="256"></span></p>
 </div>
 <hr>
 </div>
 <div class="sect2">
-<h3 id="_configuration">2.2. Configuration</h3>
+<h3 id="_configuration">1.2. Configuration</h3>
 <div class="sect3">
-<h4 id="_configuration_du_plugin">2.2.1. Configuration du plugin:</h4>
+<h4 id="_configuration_du_plugin">1.2.1. Configuration du plugin:</h4>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -487,25 +470,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Afin d&#8217;utiliser le plugin, vous devez le télécharger, l&#8217;installer et l&#8217;activer comme tout plugin Jeedom.</p>
 </div>
 <div class="paragraph">
-<p>Rendez vous dans le menu plugins/energie, vous y trouverez le plugin Smarplug :</p>
+<p>Rendez vous dans le menu plugins/energie, vous y trouverez le plugin Mpower :</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../images/smartplug-config.png" alt="smartplug-config" width="380"></span></p>
+<p><span class="image"><img src="../images/configuration1.png" alt="configuration1" width="380"></span></p>
 </div>
 <div class="paragraph">
-<p>Ensuite vous arriverez sur la page qui listera vos Smartplugs</p>
+<p>Ensuite vous arriverez sur la page qui listera vos Mpowers</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../images/smartplug-list-device.png" alt="smartplug-list-device" width="380"></span></p>
+<p><span class="image"><img src="../images/mpower_screenshot4.png" alt="mpower_screenshot4" width="380"></span></p>
 </div>
 <div class="paragraph">
-<p>Cliquez sur le bouton Ajouter si vous voulez rajouter un Smartplug manuellement</p>
+<p>Cliquez sur le bouton Ajouter si vous voulez rajouter un Mpower manuellement</p>
 </div>
 <div class="paragraph">
 <p>Sur cette page vous trouverez trois sections :</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../images/smartplug-config2.png" alt="smartplug-config2" width="380"></span></p>
+<p><span class="image"><img src="../images/mpower_screenshot2.png" alt="mpower_screenshot2" width="380"></span></p>
 </div>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
@@ -527,7 +510,7 @@ si vous voulez que l&#8217;équipement soit actif ou non , et enfin si vous voul
 </ol>
 </div>
 <div class="paragraph">
-<p>Cette section est une des plus importantes elle permet de choisir le modèle, l&#8217;ip de votre wifi smarplug.</p>
+<p>Cette section est une des plus importantes elle permet de choisir le modèle, l&#8217;ip de votre mpower ainsi que les identifications de connections (si vous les avez pas changé par défaut c&#8217;est : ubnt/ubnt)</p>
 </div>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
@@ -544,48 +527,21 @@ si vous voulez que l&#8217;équipement soit actif ou non , et enfin si vous voul
 </div>
 </div>
 <div class="sect3">
-<h4 id="_le_widget">2.2.2. Le widget :</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>PRISE HS110</p>
-</li>
-</ul>
+<h4 id="_le_widget">1.2.2. Le widget :</h4>
+<div class="paragraph">
+<p><span class="image"><img src="../images/mpower_screenshot1.png" alt="mpower_screenshot1" width="380"></span>
+<span class="image"><img src="../images/mpower_screenshot3.png" alt="mpower_screenshot3" width="380"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../images/hs110-1.png" alt="hs110-1" width="380"></span>
-<span class="image"><img src="../images/hs110-2.png" alt="hs110-2" width="380"></span></p>
-</div>
-<div class="paragraph">
-<p>Le widget se décompose en deux parties dans le cas de la prise HS110 ( remonté de la consommation):</p>
+<p>Le widget se décompose en deux parties :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Par défaut vous voyez votre wifi smarplug  avec la puissance,le voltage et la duréé depuis son activation. Un clic sur la smartplug permet de changer son état. En bas a gauche vous avez un boutons permettant de passer la led du smartplug en mode nuit.</p>
+<p>Par défaut vous voyez vos prises avec la puissance et la consommation de chacune. Un clic sur la prise permet de changer son état. En bas a gauche vous avez deux boutons permettant de couper ou allumer toutes les prises.</p>
 </li>
 <li>
-<p>Lorsque vous cliquez sur le bouton en bas à droite vous avez la consommation du jours</p>
-<div class="ulist">
-<ul>
-<li>
-<p>PRISE HS100</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../images/hs100.png" alt="hs100" width="380"></span></p>
-</div>
-<div class="paragraph">
-<p>Le widget se décompose en une seul partie dans le cas de la prise HS110 ( remonté de la consommation):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Par défaut vous voyez votre wifi smarplug  duréé depuis son activation. Un clic sur la smartplug permet de changer son état. En bas a gauche vous avez un boutons permettant de passer la led du smartplug en mode nuit.</p>
+<p>Lorsque vous cliquez sur le bouton en bas à droite vous remplacez la puissance et la consommation par le courant, les volts et le facteur de puissance</p>
 </li>
 </ul>
 </div>

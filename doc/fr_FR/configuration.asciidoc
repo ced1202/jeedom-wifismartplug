@@ -56,3 +56,4 @@ Le widget se décompose en une seul partie dans le cas de la prise HS110 ( remon
 * Par défaut vous voyez votre wifi smarplug  duréé depuis son activation. Un clic sur la smartplug permet de changer son état. En bas a gauche vous avez un boutons permettant de passer la led du smartplug en mode nuit.
 
 
+
