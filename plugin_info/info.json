@@ -1,5 +1,5 @@
 {
-    "id": "wifismartplug",
+    "id": "jeedom-wifismartplug",
     "name" : "Wifi Smartplug",
     "description" : "Plugin pour controller les équipements smartplug wifi TpLink",
     "licence" : "AGPL",
