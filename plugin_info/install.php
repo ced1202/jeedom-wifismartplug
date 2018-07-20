@@ -16,10 +16,8 @@
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once dirname(__FILE__) . '/../../../core/php/core.inc.php';
-
 function smartplug_install() {
-    
+
 }
 
 function smartplugk_update() {
@@ -31,7 +29,7 @@ function smartplugk_update() {
 
 
 function smartplug_remove() {
-    
+
 }
 
 ?>
