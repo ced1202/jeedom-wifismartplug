@@ -587,7 +587,7 @@ class wifismartplugCmd extends cmd {
         $ipsmartplug = $eqLogic->getConfiguration('addr');
         
           log::add('wifismartplug', 'debug','action'. $action );
-        log::add('wifismartplug', 'debug', $eqLogic );
+        log::add('wifismartplug', 'debug', $eqLogic->getLogicalId() );
         
         if ($action == 'refresh') {
             $eqLogic->cron($eqLogic->getId());
