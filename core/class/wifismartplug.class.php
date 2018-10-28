@@ -551,7 +551,7 @@ class wifismartplug extends eqLogic {
               }
           }
           
-          return $this->postToHtml($_version, template_replace($replace, getTemplate('core', $version, 'smartplug', 'wifismartplug')));
+          return $this->postToHtml($_version, template_replace($replace, getTemplate('core', $version, $this->getConfiguration('model'), 'wifismartplug')));
           
           
       }
