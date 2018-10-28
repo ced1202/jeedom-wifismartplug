@@ -1,16 +1,16 @@
 {
     "id": "wifismartplug",
     "name" : "Wifi Smartplug",
-    "description" : "Plugin pour controller les équipements smartplug wifi TpLink",
+    "description" : "Plugin pour controller les équipements smartplug Wi-Fi TpLink",
     "licence" : "AGPL",
     "author" : "noext",
     "require" : "3.2",
     "category" : "energy",
     "hasDependency" : false,
-	  "hasOwnDeamon" : false,
+	"hasOwnDeamon" : false,
     "maxDependancyInstallTime" : 0,
     "changelog" : "https://jeedom.github.io/plugin-template/#language#/changelog",
     "documentation" : "https://jeedom.github.io/plugin-template/#language#/",
-	   "language" : ["fr_FR","en_US","de_DE","sp_SP","ru_RU","id_ID","it_IT"],
-     "compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"]
+	"language" : ["fr_FR","en_US","de_DE","sp_SP","ru_RU","id_ID","it_IT"],
+    "compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"]
 }

@@ -77,7 +77,7 @@ class wifismartplug extends eqLogic {
           $modelsmartplug = $this->getConfiguration('model');
           
           /* first get relay status, nightmode, mac address alias currentruntime from info */
-           $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rparty/smartplug.py  -t ' . $ipsmartplug . ' -c info';
+           $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rdparty/smartplug.py  -t ' . $ipsmartplug . ' -c info';
            $result=trim(shell_exec($command));
            log::add('wifismartplug','debug','retour [info]');
            log::add('wifismartplug','debug',$command);
@@ -159,7 +159,7 @@ class wifismartplug extends eqLogic {
               
               
               /* -- set daily consumption --*/
-              $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rparty/smartplug.py  -t ' . $ipsmartplug . ' -c dailyConsumption';
+              $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rdparty/smartplug.py  -t ' . $ipsmartplug . ' -c dailyConsumption';
               $result=trim(shell_exec($command));
               log::add('wifismartplug','debug','retour [dailyConso]');
               log::add('wifismartplug','debug',$command);
@@ -174,7 +174,7 @@ class wifismartplug extends eqLogic {
               }
               
               /* power and voltage from */
-              $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rparty/smartplug.py  -t ' . $ipsmartplug . ' -c realtimeVoltage';
+              $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rdparty/smartplug.py  -t ' . $ipsmartplug . ' -c realtimeVoltage';
               $result=trim(shell_exec($command));
               log::add('wifismartplug','debug','retour [realvoltage]');
               log::add('wifismartplug','debug',$command);
@@ -551,7 +551,7 @@ class wifismartplug extends eqLogic {
               }
           }
           
-          return $this->postToHtml($_version, template_replace($replace, getTemplate('core', $version, $this->getConfiguration('model'), 'wifismartplug')));
+          return $this->postToHtml($_version, template_replace($replace, getTemplate('core', $version, 'smartplug', 'wifismartplug')));
           
           
       }
@@ -587,7 +587,7 @@ class wifismartplugCmd extends cmd {
         $ipsmartplug = $eqLogic->getConfiguration('addr');
         
           log::add('wifismartplug', 'debug','action'. $action );
-        log::add('wifismartplug', 'debug', $eqLogic );
+        log::add('wifismartplug', 'debug', $eqLogic->getLogicalId() );
         
         if ($action == 'refresh') {
             $eqLogic->cron($eqLogic->getId());
@@ -598,7 +598,7 @@ class wifismartplugCmd extends cmd {
         
          /* set  : on */
         if ($action == 'on') {
-            $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rparty/smartplug.py  -t '  . $ipsmartplug . ' -c on';
+            $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rdparty/smartplug.py  -t '  . $ipsmartplug . ' -c on';
            $result=trim(shell_exec($command));
             log::add('wifismartplug','debug','action on');
             log::add('wifismartplug','debug',$command);
@@ -608,7 +608,7 @@ class wifismartplugCmd extends cmd {
         
                 /* set  : off */
         if ($action == 'off') {
-            $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rparty/smartplug.py  -t '  . $ipsmartplug . ' -c off';
+            $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rdparty/smartplug.py  -t '  . $ipsmartplug . ' -c off';
             $result=trim(shell_exec($command));
             log::add('wifismartplug','debug','action off');
             log::add('wifismartplug','debug',$command);
@@ -618,7 +618,7 @@ class wifismartplugCmd extends cmd {
         
         /* set  : nightmodeon */
         if ($action == 'nightmodeon') {
-            $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rparty/smartplug.py  -t '  . $ipsmartplug . ' -c nightModeOn';
+            $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rdparty/smartplug.py  -t '  . $ipsmartplug . ' -c nightModeOn';
             $result=trim(shell_exec($command));
             log::add('wifismartplug','debug','action nightModeOn');
             log::add('wifismartplug','debug',$command);
@@ -628,7 +628,7 @@ class wifismartplugCmd extends cmd {
         
         /* set  : nightmodeoff */
         if ($action == 'nightmodeoff') {
-            $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rparty/smartplug.py  -t '  . $ipsmartplug . ' -c nightModeOff';
+            $command = '/usr/bin/python ' .dirname(__FILE__).'/../../3rdparty/smartplug.py  -t '  . $ipsmartplug . ' -c nightModeOff';
              $result=trim(shell_exec($command));
             log::add('wifismartplug','debug','action nightModeOff');
             log::add('wifismartplug','debug',$command);

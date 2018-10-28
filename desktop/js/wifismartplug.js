@@ -1,4 +1,3 @@
-
 /* This file is part of Jeedom.
  *
  * Jeedom is free software: you can redistribute it and/or modify
@@ -16,14 +15,28 @@
  */
 
 $('#bt_healthsmartplug').on('click', function () {
-                         $('#md_modal').dialog({title: "{{Santé SmarPlug}}"});
-                         $('#md_modal').load('index.php?v=d&plugin=wifismartplug&modal=health').dialog('open');
-                         });
+    $('#md_modal').dialog({title: "{{Santé SmarPlug}}"});
+    $('#md_modal').load('index.php?v=d&plugin=wifismartplug&modal=health').dialog('open');
+});
 
-$('.eqLogicAttr[data-l1key=configuration][data-l2key=model]').on('change',function(){
-                                                                 $('#img_mpowerModel').attr('src','plugins/wifismartplug/doc/images/'+$(this).value()+'.jpg');
-                                                                 });
-$("#table_cmd").sortable({axis: "y", cursor: "move", items: ".cmd", placeholder: "ui-state-highlight", tolerance: "intersect", forcePlaceholderSize: true});
+$('.eqLogicAttr[data-l1key=configuration][data-l2key=model]').on('change', function () {
+    var plugModel = $(this).value();
+    if (plugModel !== null) {
+        $('#img_mpowerModel').attr('src', 'plugins/wifismartplug/doc/images/' + $(this).value() + '.jpg');
+    }
+    else {
+        $('#img_mpowerModel').attr('src', '');
+    }
+});
+$("#table_cmd").sortable({
+    axis: "y",
+    cursor: "move",
+    items: ".cmd",
+    placeholder: "ui-state-highlight",
+    tolerance: "intersect",
+    forcePlaceholderSize: true
+});
+
 function addCmdToTable(_cmd) {
     if (!isset(_cmd)) {
         var _cmd = {configuration: {}};
