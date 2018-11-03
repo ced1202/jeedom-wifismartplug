@@ -59,7 +59,7 @@
 
         <div class="smartplugRows_#uid# etat">
             <div class="smartplug_state_#uid#">
-                <i class="icon jeedom-prise plug-icon cursor tooltips" title="etat" style="font-size: 4em;margin-left: 5px;color:grey"></i>
+                <i class="icon jeedom-prise plug-icon cursor tooltips" title="etat" style="font-size: 4em;margin-left: 5px;color:#iconColor#"></i>
             </div>
         </div>
 
@@ -126,21 +126,6 @@
         var state#uid# = #etat#;
         var nightMode#uid# = #nightmode#;
 
-        function updateWidget() {
-            if (state#uid# == 1) {
-                $('.eqLogic[data-eqLogic_uid=#uid#] .plug-icon').css('color', 'white');
-            }
-        else {
-                $('.eqLogic[data-eqLogic_uid=#uid#] .plug-icon').css('color', 'grey');
-            }
-            if (nightMode#uid# == 1) {
-                $('.eqLogic[data-eqLogic_uid=#uid#] .led').css('color', 'grey');
-            }
-        else {
-                $('.eqLogic[data-eqLogic_uid=#uid#] .led').css('color', 'white');
-            }
-        }
-
         $('.eqLogic[data-eqLogic_uid=#uid#] .refresh').on('click', function () {
             jeedom.cmd.execute({id: '#refresh_id#'});
         });
@@ -153,7 +138,6 @@
                 jeedom.cmd.execute({id: '#on_id#'});
                 state#uid# = 1;
             }
-            updateWidget();
         });
 
         $('.eqLogic[data-eqLogic_uid=#uid#] .changecmd').on('click', function () {
