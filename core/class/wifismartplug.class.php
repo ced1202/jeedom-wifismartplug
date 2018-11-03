@@ -546,26 +546,20 @@ class wifismartplug extends eqLogic {
                 if ($cmd->getIsHistorized() == 1) {
                     $replace['#' . $cmd->getLogicalId() . '_history#'] = 'history cursor';
                 }
+                if ($cmd->getName() == 'Etat') {
+                    if ($cmd->execCmd() == 1) {
+                        $replace['#iconColor#'] = 'white';
+                    } else {
+                        $replace['#iconColor#'] = 'grey';
+                    }
+                }
             } else {
                 $replace['#' . $cmd->getLogicalId() . '_id#'] = $cmd->getId();
             }
         }
 
-        try {
-            $infos = $this->getInfo();
-        } catch (\Exception $e) {
-            return;
-        }
 
-        if (isset($infos['etat'])) {
-            if ($infos['etat'] == 1) {
-                $replace['#iconColor#'] = "white";
-            }else{
-                $replace['#iconColor#'] = "grey";
-            }
-        }
-
-        return $this->postToHtml($_version, template_replace($replace, getTemplate('core', $version, $this->getConfiguration('model'), 'wifismartplug')));
+                return $this->postToHtml($_version, template_replace($replace, getTemplate('core', $version, $this->getConfiguration('model'), 'wifismartplug')));
 
 
     }
