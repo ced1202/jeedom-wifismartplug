@@ -258,7 +258,7 @@ class wifismartplug extends eqLogic
         if (!is_object($macAddress)) {
             $macAddress = new wifismartplugCmd();
             $macAddress->setLogicalId('macAddress');
-            $macAddress->setIsVisible(1);
+            $macAddress->setIsVisible(0);
             $macAddress->setName(__('macAddress', __FILE__));
         }
         $macAddress->setType('info');
@@ -273,7 +273,7 @@ class wifismartplug extends eqLogic
         if (!is_object($alias)) {
             $alias = new wifismartplugCmd();
             $alias->setLogicalId('alias');
-            $alias->setIsVisible(1);
+            $alias->setIsVisible(0);
             $alias->setName(__('alias', __FILE__));
         }
         $alias->setType('info');
