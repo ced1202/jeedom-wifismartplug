@@ -24,6 +24,7 @@ import argparse
 import json
 import time
 import datetime
+from struct import pack
 
 version = 0.1
 
@@ -40,7 +41,7 @@ date = datetime.datetime.now()
 month = date.month
 year = date.year
 dailyconsumptionCommand = str('{"emeter":{"get_daystat":{"month":') + str(month) + str(',"year":') +str(year) +str("}}}")
-
+print dailyconsumptionCommand;
 # Predefined Smart Plug Commands
 # For a full list of commands, consult tplink_commands.txt
 commands = {'info'                 : '{"system":{"get_sysinfo":{}}}',
@@ -76,19 +77,19 @@ commands = {'info'                 : '{"system":{"get_sysinfo":{}}}',
 # XOR Autokey Cipher with starting key = 171
 def encrypt(string):
 	key = 171
-	result = "\0\0\0\0"
-	for i in string: 
+	result = pack('>I', len(string))
+	for i in string:
 		a = key ^ ord(i)
 		key = a
 		result += chr(a)
 	return result
 
 def decrypt(string):
-	key = 171 
+	key = 171
 	result = ""
-	for i in string: 
+	for i in string:
 		a = key ^ ord(i)
-		key = ord(i) 
+		key = ord(i)
 		result += chr(a)
 	return result
 	
@@ -123,7 +124,7 @@ def dailyConsumption(string):
 	result = ""
 	jsonObj = json.loads(string)
 	for x in jsonObj['emeter']['get_daystat']['day_list']:
-		result = x['energy']
+		result = x['energy_wh']/1000
 	return result
 
 
@@ -161,9 +162,9 @@ try:
 	elif args.command  == "currentRunTimeHour":
 		print "%s:%s:%s:%s" % decoupe(json.loads(decrypt(data[4:]))['system']['get_sysinfo']['on_time'])
 	elif args.command  == "currentPower":
-		print json.loads(decrypt(data[4:]))['emeter']['get_realtime']['power']
+		print json.loads(decrypt(data[4:]))['emeter']['get_realtime']['power_mw']/1000
 	elif args.command  == "voltage":
-		print json.loads(decrypt(data[4:]))['emeter']['get_realtime']['voltage']
+		print json.loads(decrypt(data[4:]))['emeter']['get_realtime']['voltage_mv']/1000
 	elif args.command  == "dailyConsumption":
 		print dailyConsumption(decrypt(data[4:]))
 	elif args.command  == "macaddress":
