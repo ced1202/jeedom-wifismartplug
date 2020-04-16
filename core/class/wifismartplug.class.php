@@ -178,8 +178,8 @@ class wifismartplug extends eqLogic
 
                 /* decode reponse info */
                 $jsonInfo = json_decode($result, true);
-                $voltage = $jsonInfo['emeter']['get_realtime']['voltage'];
-                $power = $jsonInfo['emeter']['get_realtime']['power'];
+                $voltage = $jsonInfo['emeter']['get_realtime']['voltage_mv']/1000;
+                $power = $jsonInfo['emeter']['get_realtime']['power_mw'] / 1000;
 
                 log::add(__CLASS__, 'debug', 'voltage : ' . $voltage);
                 log::add(__CLASS__, 'debug', 'power : ' . $power);
