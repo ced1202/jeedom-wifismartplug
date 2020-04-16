@@ -126,7 +126,7 @@
         var state#uid# = #etat#;
         var nightMode#uid# = #nightmode#;
 
-        function updateWidget() {
+        function updateHSWidget() {
             if (state#uid# == 1) {
                 $('.eqLogic[data-eqLogic_uid=#uid#] .plug-icon').css('color', 'white');
             }
@@ -153,7 +153,7 @@
                 jeedom.cmd.execute({id: '#on_id#'});
                 state#uid# = 1;
             }
-            updateWidget();
+            updateHSWidget();
         });
 
         $('.eqLogic[data-eqLogic_uid=#uid#] .changecmd').on('click', function () {
@@ -171,7 +171,8 @@
                 jeedom.cmd.execute({id: '#nightmodeon_id#'});
                 nightMode#uid# = 1;
             }
-            updateWidget();
+            updateHSWidget();
         });
+		updateHSWidget();
     </script>
 </div>
