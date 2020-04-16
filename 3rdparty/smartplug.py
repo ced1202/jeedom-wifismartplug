@@ -41,7 +41,7 @@ date = datetime.datetime.now()
 month = date.month
 year = date.year
 dailyconsumptionCommand = str('{"emeter":{"get_daystat":{"month":') + str(month) + str(',"year":') +str(year) +str("}}}")
-print dailyconsumptionCommand;
+
 # Predefined Smart Plug Commands
 # For a full list of commands, consult tplink_commands.txt
 commands = {'info'                 : '{"system":{"get_sysinfo":{}}}',
